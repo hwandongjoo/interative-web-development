@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Interactive Web</title>
+    <style>
+      .world {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 80vw;
+        height: 80vh;
+        background: #fff000;
+        /* perspective: 500px; 원근감 주는 속성 */
+      }
+
+      .card {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100px;
+        height: 150px;
+        margin: 1em;
+        border-radius: 0.5em; /* 현재 element의 font-size 기준 */
+        font-size: 1.5rem; /* root element, 즉 html의 font-size 기준 */
+        background: red;
+        transform: perspective(500px) rotateY(45deg);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="world">
+      <div class="card">CARD</div>
+      <div class="card">CARD</div>
+      <div class="card">CARD</div>
+    </div>
+  </body>
+</html>
