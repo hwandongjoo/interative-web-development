@@ -24,6 +24,7 @@
         transform: rotateY(0deg);
         transition: 1s;
         /*자식 요소가 3d 공간에 배치되게 하는 속성 */
+        /* IE에서는 지원안함*/
         transform-style: preserve-3d;
         /* rotateY 기준 변경*/
         transform-origin: left;
@@ -42,6 +43,11 @@
         /* root element, 즉 html의 font-size 기준 */
         font-size: 1.5rem;
         /* 브라우저마다 깜빡거리는 현상이 나타날수 있기때문에 기본적으로 설정하는거 추천*/
+        /* 사파리에서는 -webkit- 접두어필수*/
+        /* 가장 중요한 것은 표준 속성이 마지막으로 가야한다!! */
+        -webkit-backface-visibility: hidden;
+        -moz-backface-visibility: hidden;
+        -o-backface-visibility: hidden;
         backface-visibility: hidden;
       }
       .card-side-front {
