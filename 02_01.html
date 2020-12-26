@@ -1,52 +1,65 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Interactive Web</title>
-    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/reset.css" />
     <style>
-        img {
-            max-width: 100%;
-            height: auto;
-        }
-        .characters {
-            display: flex;
-            align-items: center;
-            justify-content: space-around;
-            background: #fff000;
-        }
-        .ilbuni {
-            width: 100px;
-            cursor: pointer;
-        }
-        .characters .ilbuni {
-            display: inline-block;
-        }
-        .special {
-            border: 10px dashed red;
-        }
+      img {
+        max-width: 100%;
+        height: auto;
+      }
+      .characters {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        background: #fff000;
+      }
+      .ilbuni {
+        width: 100px;
+        cursor: pointer;
+      }
+      .characters .ilbuni {
+        display: inline-block;
+      }
+      .special {
+        border: 10px dashed red;
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <div class="characters">
-        <div class="ilbuni a">
-            <img src="images/ilbuni_0.png" alt="일분이">
-        </div>
-        <div class="ilbuni b">
-            <img src="images/ilbuni_1.png" alt="일분이">
-        </div>
-        <div class="ilbuni c">
-            <img src="images/ilbuni_2.png" alt="일분이">
-        </div>
+      <div class="ilbuni a">
+        <img src="images/ilbuni_0.png" alt="일분이" />
+      </div>
+      <div class="ilbuni b">
+        <img src="images/ilbuni_1.png" alt="일분이" />
+      </div>
+      <div class="ilbuni c">
+        <img src="images/ilbuni_2.png" alt="일분이" />
+      </div>
     </div>
     <div class="ilbuni d">
-        <img src="images/ilbuni_3.png" alt="일분이">
+      <img src="images/ilbuni_3.png" alt="일분이" />
     </div>
 
     <script>
-        // 직접 타이핑 해보세요
+      // classList.add() => 기존 + 추가
+      // classList.remove() => 삭제
+      // classList.toggle() => 토글
+      // className = '' => 기존 삭체 + 새걸로 업데이트
+      // window.addEv~~ load : 모든 페이지 로드시
+      // window.addEv~~ DOMContentLoaded : DOM 구조만 로드되면 -> 훨씬 빠름
+      (function () {
+        //전역변수 -> 남발하면 안 좋다
+        const ilbuni = document.querySelector(".ilbuni.c");
+        function clickInbuniHandler() {
+          ilbuni.classList.toggle("special");
+        }
+        ilbuni.addEventListener("click", clickInbuniHandler);
+      })();
     </script>
-</body>
+  </body>
 </html>
